@@ -244,7 +244,9 @@ Combining switches is more complicated. I would imagine it's only useful if you'
 
 <a name="arduinocode">
 <h2>Arduino code</h2>
-Finally, here's the code in question: <a href="ppm_send.ino">ppm_send.ino</a>. To reiterate, you program this into a 3.3V Pro Mini or clone (not a 5V.) The comments in the code should cover everything you see here, but the pictures may be helpful as well, especially as regarding switch and pot connections. I hope I've covered everything you need, but if not, feel free to let me know via dremu-at-yahoo-dot-com.
+Finally, here's the code in question: <a href="ppm_send.ino">ppm_send.ino</a>. To reiterate, you program this into a 3.3V Pro Mini or clone (not a 5V.) The comments in the code should cover everything you see here, but the pictures may be helpful as well, especially as regarding switch and pot connections. I hope I've covered everything you need, but if not, feel free to let me know via dremu-at-yahoo-dot-com or put in an issues on git.
+  
+I've recently gotten into the ESP8266/32 boards, so at some point I intend to do an ESP32 version of this. Their increased I/O capability, plus freater computing power, should allow greater flexibility and options. (As long as their greater power consumption isn't an issue for the TX, gotta look into that.)
 
 </body>
 </html>
