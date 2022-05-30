@@ -1,11 +1,11 @@
-# FlySky-FSi6-more-switches (FlySky FSi6 modifications: More switches and/or pots)
+<h1>FlySky-FSi6-more-switches (FlySky FSi6 modifications: More switches and/or pots)</h1>
 
 (aka What else floats on water? MORE SWITCHES!)
 
-## Introduction
+<h2>Introduction</h2>
 You likely know that the FlySky FSi6 TX can be modified, with new firmware from https://github.com/qba667/FlySkyI6]https://github.com/qba667/FlySkyI6 to have even more tricks and options than it did from the factory. One such option is to send data from the trainer in port at the back of the unit (the same one used for programming firmware) along to the RX. This data can be accessed just like any of the other 14 channels, directly by the RX or as iBus data by, say, an Arduino. A fellow enthusiast was kind enough to show me some of the clever work he'd done (thank you Gaz!), to use an Arduino on the TX side, to format data to be sent via that trainer port. This data is formatted as "PPM" (pulse position modulation), as opposed to the servo-style "PWM" (pulse width modulation) of 1000-1500-2000 microseconds. The TX has three such channels, which you can select in System Setup -&gt; Aux channels as "PPM1", "PPM2", and "PPM3." This spurred some thinking on my part, and the end result is as follows. As with any project it's a work in progress and I'm always open to suggestions and comments.
 
-# Table of contents:
+<h3>Table of contents</h3>
 - [Overview](#overview)
 - [Arduino connections to the TX](#txconnections)
 - [Arduino input selections](#inputselections)
@@ -14,7 +14,7 @@ You likely know that the FlySky FSi6 TX can be modified, with new firmware from 
 - [Arduino code](#arduinocode)
 
 <a name="overview">  
-## Overview
+<h2>Overview</h2>
 
 I did up some code that sits on top of the Arduino code I was given, that allows you to choose from a number of options for switches or potentiometers, reads them and formats them in PPM to be sent along to the RX. You can use from one to three pots or one to six switches, or combinations thereof. That's in addition to the various hardware mods documented on the firmware page above. If you really like switches you can end up with 13 of them plus the two sticks. If you prefer twisty knobs you can end up with six of those plus the sticks. Or you can modify the sticks, whatever, there's tons of permutations. For the "potentiometer" option, anything that can generate a 0-3.3V voltage can be considered a "pot" as it just connects to an analog input on the Arduino. A multi-position rotary switch with a resistor between each leg, as seen on https://github.com/benb0jangles/FlySky-i6-Mod-/tree/master/6-pos-switch-mod, heck, even a Theremin (no idea why you'd want a remote control device to play spooky music, but hey, you COULD!)
 
@@ -27,7 +27,7 @@ Here's a modded TX with a pot in place of VrC (via the modded firmware) and SwE,
 This project uses a 3.3V Arduino Pro Mini, which depending on how modded your TX is, might fit inside the case. I chose to mount it on the underside of the antenna; you can just see the programming header above the switches in the pic above.
 
 <a name="txconnections">
-## Arduino connections to the TX
+<h2>Arduino connections to the TX</h2>
 
 There's a solder pad for the PPM input ("PPM IN", under "SDIO"). D10 on the Arduino goes to PPM-in.
 
@@ -38,7 +38,7 @@ There are also convenient pads for 3.3V and ground, which go to the Arduino Vcc 
 <img src="IMG_1069.jpg">
 
 <a name="inputselections">
-## Arduino input selections
+<h2>Arduino input selections</h2>
 
 Choices of input (switches or pots) are set via digital inputs. I opted to solder a DIP switch directly to the Arduino as it allows easy changes. You could instead use a double-row header with jumpers, or if you're set on your options, solder them and be done.
 
@@ -148,7 +148,7 @@ Each PPM channel's options are selected by one pair of DIP switches (jumpers, di
 </table>
 
 <a name="inputconnections">
-## Arduino input connections
+<h2>Arduino input connections</h2>
 For single switch or pot options above (marked *) also connect the next analog input to ground (ie if using A0 for a pot, ground A1.) I find this helps prevent spurious readings by the ADC's.
 
 If using a pot, just connect it to the analog input as a voltage divider:
@@ -176,7 +176,7 @@ Once you've chosen your input options, go to System Setup -&gt; Aux channels and
 <img src="IMG_2842.JPG">
 
 <a name="returnedvalues">
-## Returned values
+<h2>Returned values</h2>
 
 If you choose the pot option, you'll get a response at the RX of 1000...2000, just as you would a dial like VrA on the TX.
 
@@ -241,7 +241,7 @@ Combining switches is more complicated. I would imagine it's only useful if you'
 
 
 <a name="arduinocode">
-## Arduino code
+<h2>Arduino code</h2>
 Finally, here's the code in question: <a href="ppm_send.ino">ppm_send.ino</a>. To reiterate, you program this into a 3.3V Pro Mini or clone (not a 5V.) The comments in the code should cover everything you see here, but the pictures may be helpful as well, especially as regarding switch and pot connections. I hope I've covered everything you need, but if not, feel free to let me know via dremu-at-yahoo-dot-com.
 
 </body>
