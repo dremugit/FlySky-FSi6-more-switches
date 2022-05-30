@@ -7,13 +7,13 @@ You likely know that the FlySky FSi6 TX can be modified, with new firmware from 
 
 <h3>Table of contents</h3>
 <ul>
-  <li><a href="#overview">Overview</a>
-  <li><a href="#txconnections">Arduino connections to the TX</a>
-- [Arduino connections to the TX](#txconnections)
-- [Arduino input selections](#inputselections)
-- [Arduino input connections](#inputconnections)
-- [Returned values](#returnedvalues)
-- [Arduino code](#arduinocode)
+<li><a href="#overview">Overview</a>
+<li><a href="#txconnections">Arduino connections to the TX</a>
+<li><a href="#inputselections">Arduino input selections</li>
+<li><a href="#inputconnections">Arduino input connections</li>
+<li><a href="#returnedvalues">Returned values</li>
+<li><a href="#arduinocode">Arduino code</li>
+</ul>
 
 <a name="overview">  
 <h2>Overview</h2>
