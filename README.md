@@ -2,10 +2,10 @@
 
 (aka What else floats on water? MORE SWITCHES!)
 
-##Introduction
+## Introduction
 You likely know that the FlySky FSi6 TX can be modified, with new firmware from https://github.com/qba667/FlySkyI6]https://github.com/qba667/FlySkyI6 to have even more tricks and options than it did from the factory. One such option is to send data from the trainer in port at the back of the unit (the same one used for programming firmware) along to the RX. This data can be accessed just like any of the other 14 channels, directly by the RX or as iBus data by, say, an Arduino. A fellow enthusiast was kind enough to show me some of the clever work he'd done (thank you Gaz!), to use an Arduino on the TX side, to format data to be sent via that trainer port. This data is formatted as "PPM" (pulse position modulation), as opposed to the servo-style "PWM" (pulse width modulation) of 1000-1500-2000 microseconds. The TX has three such channels, which you can select in System Setup -&gt; Aux channels as "PPM1", "PPM2", and "PPM3." This spurred some thinking on my part, and the end result is as follows. As with any project it's a work in progress and I'm always open to suggestions and comments.
 
-#Table of contents:
+# Table of contents:
 - [Overview](#overview)
 - [Arduino connections to the TX](#txconnections)
 - [Arduino input selections](#inputselections)
